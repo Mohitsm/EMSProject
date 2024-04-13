@@ -15,14 +15,16 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "category")
-public class Category {
-	
+@Table(name = "user")
+public class User {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer categoryId;
-	private String categoryName;
+	private Integer userId;
+	private String name;
+	private String email;
+	
+	
 	
 
 }
