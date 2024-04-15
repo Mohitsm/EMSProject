@@ -37,10 +37,12 @@ public class FileControll {
 		String fileName=null;
 		try {
 			fileName = this.fileService.uplodeImage(path, image);
+			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			return new ResponseEntity<FileResponse>(new FileResponse(fileName, "file is not uploded!!"),HttpStatus.OK);
+			
+			return new ResponseEntity<FileResponse>(new FileResponse(fileName, "Failed to upload image: " + e.getMessage()),HttpStatus.OK);
 
 		}
 		return new ResponseEntity<FileResponse>(new FileResponse(fileName, "file is uploded!!"),HttpStatus.OK);

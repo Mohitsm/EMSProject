@@ -42,6 +42,8 @@ public class FileServiceImpl implements FileService {
 		// TODO Auto-generated method stub
 		String fullPath=path+File.separator+fileName;
 		InputStream is=new FileInputStream(fullPath);
+		
+		//db
 		return is; 
 		
 	}

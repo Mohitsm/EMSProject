@@ -62,5 +62,12 @@ public class UserControll {
 		return ResponseEntity.ok(this.userService.getUserById(userId));
 	}
 	
+	//count user
+	@GetMapping("/count")
+    public ResponseEntity<Long> countUsers() {
+        long count = userService.countUser();
+        return ResponseEntity.ok(count);
+    }
+	
 
 }

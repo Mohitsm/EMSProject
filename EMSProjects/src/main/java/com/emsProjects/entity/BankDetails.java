@@ -10,23 +10,22 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@Entity
+@Table(name = "Bank_Details")
 @Setter
 @Getter
-@NoArgsConstructor
 @AllArgsConstructor
-@Entity
-@Table(name = "user")
-public class User {
+@NoArgsConstructor
+public class BankDetails {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer userId;
-	private String name;
-	private String email;
-	private String department;
-	private String branches;
-	
-	
+	private Integer bankDetailsId;
+	private String accountHolderName;
+	private String accountNo;
+	private String ifscCode;
+	private String bankName;
+	private String branchAddress;
 	
 
 }

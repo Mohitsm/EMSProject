@@ -1,6 +1,7 @@
 package com.emsProjects.entity;
 
 import jakarta.persistence.Entity;
+
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -10,22 +11,19 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Setter
+@Entity
+@Table(name = "Family_Details")
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
-@Table(name = "user")
-public class User {
-	
+public class FamilyDetails {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer userId;
+	private Integer familyDetailsId;
+	private String relationType;
 	private String name;
-	private String email;
-	private String department;
-	private String branches;
-	
+	private String phoneNo;
+	private String dataOfBirth;
 	
 	
 

@@ -1,6 +1,7 @@
 package com.emsProjects.entity;
 
 import jakarta.persistence.Entity;
+
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -10,23 +11,20 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@Entity
+@Table(name = "Previous_Work")
 @Setter
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
-@Table(name = "user")
-public class User {
-	
+public class PreviousWork {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer userId;
-	private String name;
-	private String email;
-	private String department;
-	private String branches;
-	
-	
-	
+	private Integer previousWorkId;
+	private String company;
+	private String designationName;
+	private String fromData;
+	private String toData;
+	private String duration;
 
 }

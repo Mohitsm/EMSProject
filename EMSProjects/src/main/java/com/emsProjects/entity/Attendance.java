@@ -15,18 +15,16 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "user")
-public class User {
+@Table(name = "attendance")
+public class Attendance {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer userId;
+	private Integer attendanceId;
 	private String name;
-	private String email;
-	private String department;
-	private String branches;
-	
-	
+	private String punchIn;
+	private String punchOut;
+	private String status;
 	
 
 }

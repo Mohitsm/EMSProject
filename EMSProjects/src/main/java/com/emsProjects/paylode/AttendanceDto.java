@@ -9,14 +9,13 @@ import lombok.Setter;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserDto {
+public class AttendanceDto {
 	
-	private Integer userId;
+	private Integer attendanceId;
 	private String name;
-	private String email;
-	private String department;
-	private String branches;
-	
-	
+	private String punchIn;
+	private String punchOut;
+	private String status;
+
 
 }

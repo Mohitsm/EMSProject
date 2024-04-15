@@ -57,6 +57,12 @@ public class CategoryControll {
 		public ResponseEntity<List<CategoryDto>> getAllCategory(){
 			return ResponseEntity.ok(this.categoryService.getAllCategory());
 		}
+		//count category
+		@GetMapping("/count")
+	    public ResponseEntity<Long> countUsers() {
+	        long count = categoryService.countCategory();
+	        return ResponseEntity.ok(count);
+	    }
 	
 	
 

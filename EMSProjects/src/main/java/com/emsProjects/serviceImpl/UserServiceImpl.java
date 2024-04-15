@@ -40,6 +40,8 @@ public class UserServiceImpl implements UserService{
 				.orElseThrow(()-> new ResourceNotFoundException("User","Id",userId));
 		user.setName(userDto.getName());
 		user.setEmail(userDto.getEmail());
+		user.setBranches(userDto.getBranches());
+		user.setDepartment(userDto.getDepartment());
 		
 		User updateUser=this.userRepo.save(user);
 		
@@ -69,6 +71,12 @@ public class UserServiceImpl implements UserService{
 				.orElseThrow(()-> new ResourceNotFoundException("User","Id",userId));
 		
 		this.userRepo.delete(user);
+	}
+
+	@Override
+	public Long countUser() {
+		// TODO Auto-generated method stub
+		return userRepo.count();
 	}
 
 }

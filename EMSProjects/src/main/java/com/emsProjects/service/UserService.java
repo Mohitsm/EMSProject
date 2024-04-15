@@ -10,5 +10,6 @@ public interface UserService {
 	UserDto getUserById(Integer userId);
 	List<UserDto> getAllUsers();
 	void deteteUser(Integer userId);
+	public Long countUser();
 
 }

@@ -12,5 +12,6 @@ public interface CategoryService {
 	void deleteCategory(Integer categoryId);
 	CategoryDto getCategoryById(Integer categoryId);
 	List<CategoryDto> getAllCategory();
+	public Long countCategory();
 
 }
