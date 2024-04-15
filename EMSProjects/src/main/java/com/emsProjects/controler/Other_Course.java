@@ -1,7 +1,6 @@
 package com.emsProjects.controler;
 
 import java.io.IOException;
-
 import java.io.InputStream;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,15 +24,14 @@ import jakarta.servlet.http.HttpServletResponse;
 
 @RestController
 @RequestMapping("/api/file")
-public class FileControll {
-	
+public class Other_Course {
 	@Autowired
 	private FileService fileService;
 	
-	@Value("${project.image}")
+	@Value("${projectdocum.image}")
 	private String path;
 	
-	@PostMapping("/uplode")
+	@PostMapping("/Other_Course")
 	public ResponseEntity<FileResponse> fileUplode(@RequestParam("image") MultipartFile image){
 		String fileName=null;
 		try {
@@ -51,7 +49,7 @@ public class FileControll {
 	
 	//get image file
 	
-	@GetMapping(value = "/image/{imageName}",produces=MediaType.IMAGE_JPEG_VALUE)
+	@GetMapping(value = "/Other_Course/{imageName}",produces=MediaType.IMAGE_JPEG_VALUE)
 	public void downlodeFile(@PathVariable("imageName") String imageName,HttpServletResponse response) throws IOException {
 		InputStream resurcee=this.fileService.getResores(path, imageName);
 		
