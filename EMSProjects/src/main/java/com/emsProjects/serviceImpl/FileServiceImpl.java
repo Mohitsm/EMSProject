@@ -1,7 +1,10 @@
 package com.emsProjects.serviceImpl;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
@@ -32,6 +35,15 @@ public class FileServiceImpl implements FileService {
 		
 		Files.copy(file.getInputStream(), Paths.get(fileName));
 		return name;
+	}
+
+	@Override
+	public InputStream getResores(String path, String fileName) throws FileNotFoundException {
+		// TODO Auto-generated method stub
+		String fullPath=path+File.separator+fileName;
+		InputStream is=new FileInputStream(fullPath);
+		return is; 
+		
 	}
 
 }
