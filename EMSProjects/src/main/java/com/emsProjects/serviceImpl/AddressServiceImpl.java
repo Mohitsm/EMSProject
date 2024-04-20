@@ -33,12 +33,16 @@ public class AddressServiceImpl implements AddressService {
 	public AddressDto updateAddress(AddressDto addressDto, Integer addtressId) {
 		// TODO Auto-generated method stub
 		Address address=this.addressRepo.findById(addtressId).orElseThrow(()-> new ResourceNotFoundException("Address", "Id", addtressId));
-		address.setAddress(addressDto.getAddress());
-		address.setAddressType(addressDto.getAddressType());
-		address.setCity(addressDto.getCity());
-		address.setCountry(addressDto.getCountry());
-		address.setPincode(addressDto.getPincode());
-		address.setState(addressDto.getState());
+		address.setPermanentAddressField(addressDto.getPermanentAddressField());
+		address.setPermanentCity(addressDto.getPermanentCity());
+		address.setPermanentCountry(addressDto.getPermanentCountry());
+		address.setPermanentPinCode(addressDto.getPermanentPinCode());
+		address.setPresentAddressField(addressDto.getPresentAddressField());
+		address.setPresentCity(addressDto.getPresentCity());
+		address.setPresentCountry(addressDto.getPresentCountry());
+		address.setPresentPinCode(addressDto.getPresentPinCode());
+		address.setPresentState(addressDto.getPresentState());
+		address.setPermanentState(addressDto.getPermanentState());
 		
 		Address updateAddress=this.addressRepo.save(address);
 		return this.modelMapper.map(updateAddress, AddressDto.class);

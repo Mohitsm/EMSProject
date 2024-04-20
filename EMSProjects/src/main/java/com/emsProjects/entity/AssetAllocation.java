@@ -2,7 +2,6 @@ package com.emsProjects.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -13,23 +12,22 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "Family_Details")
+@Table(name = "AssetAllocation")
+@Setter
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class FamilyDetails {
+public class AssetAllocation {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer familyDetailsId;
+	private Integer assetAllocationId;
 	@Column(length = 255)
-    private String relationName;
+    private String  assetName;
 	@Column(length = 255)
-    private String  realtionType;
-	@Column(length = 255)
-    private String   relationPhone;
-	@Column(length = 255)
-    private String  relationDOB;
-	
-	
+    private String  assetModel;
+    @Column(length = 255)
+    private String  assetSerial;
+    @Column(length = 255)
+    private String  assetDOA;
 
 }

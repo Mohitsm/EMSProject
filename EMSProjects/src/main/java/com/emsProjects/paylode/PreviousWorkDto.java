@@ -1,5 +1,6 @@
 package com.emsProjects.paylode;
 
+import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,10 +12,15 @@ import lombok.Setter;
 @AllArgsConstructor
 public class PreviousWorkDto {
 	private Integer previousWorkId;
-	private String company;
-	private String designationName;
-	private String from;
-	private String to;
+	@Column(length = 255)
+	private String companyName;
+	@Column(length = 255)
+	private String  designation;
+	@Column(length = 255)
+	private String fromData;
+	@Column(length = 255)
+	private String  toData;
+	@Column(length = 255)
 	private String duration;
-
+	
 }

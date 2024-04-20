@@ -1,5 +1,6 @@
 package com.emsProjects.paylode;
 
+import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,20 +12,33 @@ import lombok.Setter;
 @NoArgsConstructor
 public class AdvanceDetailsDto {
 	private Integer advanceDetailsId;
-	private String uanNo;
-	private String aadharNumber;
-	private String ipNumber;
+	@Column(length = 255)
+	private String  uanNumber;
+	@Column(length = 255)
 	private String esicNumber;
-	private String insuranceNumber;
-	private String pfNumber;
-	private String panNumber;
-	private String drivingLicenceNo;
-	private String ctcMontlyI;
-	private String probationPeriod;
-	private String ctcMontlyA;
-	private String clientName;
+	@Column(length = 255)
+	private String  panNumber;
+	@Column(length = 255)
+	private String  aadharNumber;
+	@Column(length = 255)
+	private String  InsuranceNumber;
+	@Column(length = 255)
+	private String drivingLicenceNumber;
+	@Column(length = 255)
+	private String  ipNumber;
+	@Column(length = 255)
+	private String  pfNumber;
+	@Column(length = 255)
+	private String  probationPeriod;
+	@Column(length = 255)
+	private String ctcAfterProbation;
+	@Column(length = 255)
+	private String client;
+	@Column(length = 255)
+	private String  deleverySubType;
+	@Column(length = 255)
 	private String clientId;
-	private String deliveryType;
-	private String deliverySubType;
+	@Column(length = 255)
+	private String deleveryType;
 
 }

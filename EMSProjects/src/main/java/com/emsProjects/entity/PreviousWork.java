@@ -1,5 +1,6 @@
 package com.emsProjects.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 
 import jakarta.persistence.GeneratedValue;
@@ -21,10 +22,16 @@ public class PreviousWork {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer previousWorkId;
-	private String company;
-	private String designationName;
+	@Column(length = 255)
+	private String companyName;
+	@Column(length = 255)
+	private String  designation;
+	@Column(length = 255)
 	private String fromData;
-	private String toData;
+	@Column(length = 255)
+	private String  toData;
+	@Column(length = 255)
 	private String duration;
+	
 
 }

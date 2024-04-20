@@ -35,12 +35,47 @@ public class QulificationServiceImpl implements QulificationService {
 		// TODO Auto-generated method stub
 		Qulification qualification=this.qulificationRepo.findById(qulificationId).orElseThrow(()-> new ResourceNotFoundException("Qualification", "Id", qulificationId));
 		
-		qualification.setQulificationType(qulificationDto.getQulificationType());
-		qualification.setUniversity(qulificationDto.getUniversity());
-		qualification.setCollege(qulificationDto.getCollege());
-		qualification.setObtentMarks(qulificationDto.getObtentMarks());
-		qualification.setPassingYear(qulificationDto.getPassingYear());
-		qualification.setTotalMarks(qulificationDto.getTotalMarks());
+		qualification.setGraduationBoard(qulificationDto.getGraduationBoard());
+		qualification.setGraduationInstitute(qulificationDto.getGraduationInstitute());
+		qualification.setGraduationObtentMarks(qulificationDto.getGraduationObtentMarks());
+		qualification.setGraduationPassingYear(qulificationDto.getGraduationPassingYear());
+		qualification.setGraduationPercentage(qulificationDto.getGraduationPercentage());
+		qualification.setGraduationTotalMarks(qulificationDto.getGraduationTotalMarks());
+		
+		qualification.setInterBoard(qulificationDto.getInterBoard());
+		qualification.setInterInstitute(qulificationDto.getInterInstitute());
+		qualification.setInterObtentMarks(qulificationDto.getInterObtentMarks());
+		qualification.setInterPassingYear(qulificationDto.getInterPassingYear());
+		qualification.setInterPercentage(qulificationDto.getInterPercentage());
+		qualification.setInterTotalMarks(qulificationDto.getInterTotalMarks());
+		
+		qualification.setMatricBoard(qulificationDto.getMatricBoard());
+		qualification.setMatricInstitute(qulificationDto.getMatricInstitute());
+		qualification.setMatricObtentMarks(qulificationDto.getMatricObtentMarks());
+		qualification.setMatricPassingYear(qulificationDto.getMatricPassingYear());
+		qualification.setMatricPercentage(qulificationDto.getMatricPercentage());
+		qualification.setMatricTotalMarks(qulificationDto.getMatricTotalMarks());
+		
+		qualification.setOtherBoard(qulificationDto.getOtherBoard());
+		qualification.setOtherInstitute(qulificationDto.getOtherInstitute());
+		qualification.setOtherObtentMarks(qulificationDto.getOtherObtentMarks());
+		qualification.setOtherPassingYear(qulificationDto.getOtherPassingYear());
+		qualification.setOtherTotalMarks(qulificationDto.getOtherTotalMarks());
+		qualification.setOtherPercentage(qulificationDto.getOtherPercentage());
+		
+		qualification.setPgBoard(qulificationDto.getPgBoard());
+		qualification.setPgInstitute(qulificationDto.getPgInstitute());
+		qualification.setPgObtentMarks(qulificationDto.getPgObtentMarks());
+
+		qualification.setPgPassingYear(qulificationDto.getPgPassingYear());
+
+		qualification.setPgPercentage(qulificationDto.getPgPercentage());
+		qualification.setPgTotalMarks(qulificationDto.getPgTotalMarks());
+
+		
+
+
+		
 		Qulification updateQulification=this.qulificationRepo.save(qualification);
 		return this.modelMapper.map(updateQulification, QulificationDto.class);
 	}

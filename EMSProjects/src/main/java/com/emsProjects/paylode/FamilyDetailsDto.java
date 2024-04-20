@@ -1,5 +1,6 @@
 package com.emsProjects.paylode;
 
+import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,9 +12,13 @@ import lombok.Setter;
 @AllArgsConstructor
 public class FamilyDetailsDto {
 	private Integer familyDetailsId;
-	private String relationType;
-	private String name;
-	private String phoneNo;
-	private String dataOfBirth;
+	@Column(length = 255)
+    private String relationName;
+	@Column(length = 255)
+    private String  realtionType;
+	@Column(length = 255)
+    private String   relationPhone;
+	@Column(length = 255)
+    private String  relationDOB;
 
 }
