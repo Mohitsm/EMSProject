@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.emsProjects.entity.Employee;
 import com.emsProjects.exception.ResourceNotFoundException;
@@ -21,6 +22,9 @@ public class EmployeeServiceImpl implements EmployeeService{
 	@Autowired
 	private EmployeeRepo employeeRepo;
 	
+//	@Autowired
+//	private MultipartFile file;
+	
 	@Autowired
 	private ModelMapper modelMapper;
 	
@@ -28,7 +32,7 @@ public class EmployeeServiceImpl implements EmployeeService{
 	public EmployeeDto createEmployee(EmployeeDto employeeDto) {
 		// TODO Auto-generated method stub
 		Employee employee=this.modelMapper.map(employeeDto, Employee.class);
-	employee.setZmageName("defalut.png");
+	employee.setZmageName("defal");
 		Employee createEmployee=this.employeeRepo.save(employee);
 		return this.modelMapper.map(createEmployee, EmployeeDto.class);
 	}
