@@ -12,19 +12,26 @@ import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.UUID;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.emsProjects.entity.Employee;
 import com.emsProjects.service.FileService;
 
 @Service
 public class FileServiceImpl implements FileService {
+	
+
+  
+  
 
 	@Override
 	public String uplodeImage(String path, MultipartFile file) throws IOException {
 		// TODO Auto-generated method stub
 		//file name
 		String name=file.getOriginalFilename();
+		
 		
 		//reandom name genreted
 //		String extension = StringUtils.getFilenameExtension(originalFilename);
@@ -39,12 +46,15 @@ public class FileServiceImpl implements FileService {
 ////		//random name geanrate file
 ////			String randomId=UUID.randomUUID().toString();
 //		String fileName1=s.concat(name.substring(name.lastIndexOf(".")));
+		//random name geanrate file
+				String randomId=UUID.randomUUID().toString();
+				String fileName1=randomId.concat(name.substring(name.lastIndexOf(".")));
 
 		
 		//full path
 		
 		
-		String fileName=path+File.separator+name;
+		String fileName=path+File.separator+fileName1;
 		//create folder if not create
 		
 		File f=new File(path);
@@ -54,7 +64,7 @@ public class FileServiceImpl implements FileService {
 		//file copy
 		
 		Files.copy(file.getInputStream(), Paths.get(fileName));
-		return name;
+		return fileName1;
 	}
 
 	@Override
