@@ -74,7 +74,14 @@
 				<configuration>
 
 					<excludes>
-						
+						<exclude>
+							<manifest>
+								<addClasspath>true</addClasspath>
+								<mainClass>com.emsProject.EmsProjectsApplication</mainClass> <!--
+								Replace with your main class -->
+							</manifest>
+						</exclude>
+
 						<exclude>
 							<groupId>org.projectlombok</groupId>
 							<artifactId>lombok</artifactId>
